@@ -71,7 +71,7 @@ class ClusterSpec(object):
     @staticmethod
     def from_dict(node_specs_dict):
         """
-        Create ClusterSpec from a dict of nodes specifics. Operation system defaults to
+        Create ClusterSpec from a dict of nodes specifics. Operating system defaults to
         'linux'. Number of nodes default to 1.
         e.g. {'os':'linux', 'cpu':2, 'mem':'4GB', 'disk':'30GB', 'additional_disks':{'/dev/sdb':'100GB'}}
 
