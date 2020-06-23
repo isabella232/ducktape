@@ -162,6 +162,9 @@ class RemoteAccount(HttpMixin):
         boot_disk = self.ssh_output(boot_disk_cmd).strip()
         disks = {}
         for d in disk_info.splitlines():
+            # ignore Warnings
+            if re.match(r"WARNING", d):
+                continue
             d_name = re.match(r"(/dev/[a-z]+)", d).group(1)
             d_size = float(re.match(r"/dev/[a-z]+:\s*([\d|\.]+)\s*GB", d).group(1))
             disks[d_name] = d_size
